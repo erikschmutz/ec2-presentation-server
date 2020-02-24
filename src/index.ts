@@ -1,30 +1,14 @@
 import "reflect-metadata";
-import Kinesis from "lifion-kinesis";
-import * as AWS from "aws-sdk";
-AWS.config.update({ region: "eu-west-1" });
+import express from "express";
 
-let numberOfSentData = 0;
-const kinesis = new Kinesis({
-  streamName: "elvenite-demo-stack-kinesisstream7162E27C-1SXQJJ1MDZDI2"
-});
+const bootstrap = async () => {
+  const express = require("express");
+  const app = express();
+  const port = 3000;
 
-kinesis.on("data", data => {
-  console.log(
-    "Incoming data:",
-    data.records.map(v => v.data),
-    numberOfSentData++
-  );
-});
+  app.get("/", (req, res) => res.send("Hello World from an ec2 container!"));
 
-kinesis.startConsumer();
-// const bootstrap = async () => {
-//   const express = require("express");
-//   const app = express();
-//   const port = 3000;
+  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+};
 
-//   app.get("/", (req, res) => res.send("Hello World!"));
-
-//   app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-// };
-
-// bootstrap();
+bootstrap();
