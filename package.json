@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "aws-kcl": "^2.1.0",
-    "aws-sdk": "^2.620.0",
+    "aws-sdk": "^2.814.0",
     "bluebird": "^3.7.2",
     "chalk": "^2.4.2",
     "deepmerge": "^4.2.2",
