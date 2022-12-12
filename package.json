@@ -20,7 +20,7 @@
     "chalk": "^2.4.2",
     "deepmerge": "^4.2.2",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "jwk-to-pem": "^2.0.3",
     "kinesis-streams": "^0.12.0",
